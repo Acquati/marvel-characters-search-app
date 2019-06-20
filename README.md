@@ -1,30 +1,22 @@
-# Recrutamento fullstack ez.devs
+# recrutamento-fullstack
 
-Obrigado por chegar até aqui, antes de começar, tem algumas coisas importantes que você precisa saber:
-- Para começar, crie um fork deste repositório e trabalhe nele.
-- O que está sendo avaliado aqui é mais sua capacidade de pesquisar e resolver problemas, 
-fique a vontade em perguntar qualquer coisa relacionada ao projeto ou tecnologia para nós.
-- As tecnologias são apenas sugestões, caso você não saiba nenhuma delas, faça na linguagem que preferir 
-ou tiver mais conhecimento (claro que na tecnologia que indicamos conta mais pontos 😉)
-- Se você tiver alguma melhoria ou sugestão para fazer no app, faça! Nós adoramos isso, sinta-se a vontade. 😍
-- Não estamos avaliando layout, mas adoramos coisas bonitas. Se precisar de referência [clique aqui](http://www.uplabs.com/)
-- Ao finalizar o teste envie um e-mail para gabriel.malinosqui@ezdevs.com.br
+> Teste para o recrutamento fullstack da EZDevs.
 
-## 1. Crie uma API
-Criar uma API feita em Node.js para retornar os super-heróis da marvel, se basear nessa aqui: https://developer.marvel.com/
+## Build Setup
 
-## 2. Crie um WEBAPP
-Criar um WEBAPP feito em [vuejs](https://vuejs.org/) para listar os heróis da MARVEL. Para saber mais sobre essa API [clique aqui](https://medium.com/@renato.groffe/consumo-de-apis-em-net-core-utilizando-a-marvel-comics-api-ebe9cc858589)
+``` bash
+# install dependencies
+$ yarn install
 
-### Listagem 
-![lista - mockup](https://raw.githubusercontent.com/ezDevs/recrutamento/master/Lista.png)
+# serve with hot reload at localhost:3000
+$ yarn run dev
 
-Nessa tela será mostrado todos os heróis da MARVEL, e ao clicar na foto ou no nome do herói o usuário será redirecionado para tela de detalhes como no exemplo abaixo.
+# build for production and launch server
+$ yarn run build
+$ yarn start
 
-### Detalhes
-![Detalhes - mockup](https://raw.githubusercontent.com/ezDevs/recrutamento/master/Detalhes.png) Tela de detalhes do herói clicado
+# generate static project
+$ yarn run generate
+```
 
-## 3. Publique a API e o WEBAPP
-Após criar a aplicação, precisamos que você publique-a em algum servidor gratuito, nós indicamos o heroku (Você vai encontrar vários tutorias no google sobre isso 😉).
-
-
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
