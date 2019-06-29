@@ -1,7 +1,7 @@
 <template>
   <v-text-field v-model="searchInput" label="Pesquisar Personagem">
     <template slot="append">
-      <v-icon @click="clearButton">clear</v-icon>
+      <v-icon v-if="hasText" @click="clearButton">clear</v-icon>
     </template>
     <template slot="append-outer">
       <v-icon>search</v-icon>
@@ -14,6 +14,11 @@ export default {
   data() {
     return {
       searchInput: ''
+    }
+  },
+  computed: {
+    hasText() {
+      return this.searchInput.length
     }
   },
   methods: {
