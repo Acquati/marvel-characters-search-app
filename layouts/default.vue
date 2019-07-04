@@ -1,6 +1,5 @@
 <template>
   <v-app>
-    <!-- <MainMenu /> -->
     <v-content>
       <nuxt />
     </v-content>
@@ -8,13 +7,7 @@
 </template>
 
 <script>
-// import MainMenu from '~/components/MainMenu.vue'
-
-export default {
-  components: {
-    // MainMenu
-  }
-}
+export default {}
 </script>
 
 <style lang="stylus" scoped></style>

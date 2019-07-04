@@ -51,7 +51,8 @@
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn darck class="white--text" color="purple">Explore</v-btn>
+              <CharacterModal />
+              <!-- <v-btn darck class="white--text" color="purple">Explore</v-btn> -->
             </v-card-actions>
           </v-card>
         </v-flex>
@@ -79,7 +80,10 @@
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn darck class="white--text" color="purple">Explore</v-btn>
+              <v-btn color="red" dark v-on="on">
+                know more
+                <v-icon right dark>library_books</v-icon>
+              </v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>
@@ -89,11 +93,15 @@
 </template>
 
 <script>
+import CharacterModal from '~/components/CharacterModal.vue'
 import { private_key, public_key } from '~/marvel'
 import md5 from 'blueimp-md5'
 import _ from 'lodash'
 
 export default {
+  components: {
+    CharacterModal
+  },
   data() {
     return {
       searchText: '',
