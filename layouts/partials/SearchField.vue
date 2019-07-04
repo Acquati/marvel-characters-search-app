@@ -1,18 +1,18 @@
 <template>
   <div>
     <v-text-field
-      v-model="searchInput"
+      v-model="searchText"
       label="Search Character"
-      @keyup.enter.native="getCharacters"
+      @keyup.enter.native="fetchCharacters"
     >
       <template slot="append">
         <v-icon v-if="hasText" @click="clearButton">clear</v-icon>
       </template>
       <template slot="append-outer">
-        <v-icon @click="getCharacters">search</v-icon>
+        <v-icon @click="fetchCharacters">search</v-icon>
       </template>
     </v-text-field>
-    <p>{{ marvelError }}</p>
+    <p>{{ answer }}</p>
     <ul v-for="character in characters" :key="character.id">
       <li>
         {{ character.thumbnail.path }}
@@ -35,39 +35,39 @@ import _ from 'lodash'
 export default {
   data() {
     return {
-      searchInput: '',
+      searchText: '',
       characters: [],
-      marvelError: 'Search for a Marvel character.'
+      answer: 'Search for a Marvel character.'
     }
   },
   computed: {
     hasText() {
-      return this.searchInput.length
+      return this.searchText.length
     }
   },
   watch: {
-    searchInput() {
-      if (this.searchInput != '') {
-        this.marvelError = 'Waiting for you to finish typing ...'
+    searchText() {
+      if (this.searchText != '') {
+        this.answer = 'Waiting for you to finish typing ...'
       } else {
-        this.marvelError = 'Search for a Marvel character.'
+        this.answer = 'Search for a Marvel character.'
       }
-      this.debouncedGetCharacters()
+      this.debouncedFetchCharacters()
     }
   },
   created() {
-    this.debouncedGetCharacters = _.debounce(this.getCharacters, 750)
+    this.debouncedFetchCharacters = _.debounce(this.fetchCharacters, 500)
   },
   methods: {
     clearButton() {
-      this.searchInput = ''
+      this.searchText = ''
     },
-    getCharacters() {
-      if (this.searchInput == '') return
+    fetchCharacters() {
+      if (this.searchText == '') return
       this.$axios
         .$get(
           'http://gateway.marvel.com/v1/public/characters?nameStartsWith=' +
-            this.searchInput +
+            this.searchText +
             '&orderBy=name&ts=' +
             this.$moment().format() +
             '&apikey=' +
@@ -78,16 +78,16 @@ export default {
         .then(result => {
           if (result.data.results.length == 0) {
             this.characters = []
-            this.marvelError = 'No character found with these letters.'
+            this.answer = 'No character found with these letters.'
           } else {
             this.characters = result.data.results
             result.data.results.length == 1
-              ? (this.marvelError = 'Character found.')
-              : (this.marvelError = 'Characters found.')
+              ? (this.answer = 'Character found.')
+              : (this.answer = 'Characters found.')
           }
         })
         .catch(error => {
-          this.marvelError = error
+          this.answer = 'Marvel API: ' + error
         })
     }
   }
