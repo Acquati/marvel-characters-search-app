@@ -1,29 +1,53 @@
 <template>
   <div>
-    <v-text-field
-      v-model="searchText"
-      label="Search Character"
-      @keyup.enter.native="fetchCharacters"
-    >
-      <template slot="append">
-        <v-icon v-if="hasText" @click="clearButton">clear</v-icon>
-      </template>
-      <template slot="append-outer">
-        <v-icon @click="fetchCharacters">search</v-icon>
-      </template>
-    </v-text-field>
-    <p>{{ answer }}</p>
-    <ul v-for="character in characters" :key="character.id">
-      <li>
-        {{ character.thumbnail.path }}
-      </li>
-      <li>
-        {{ character.name }}
-      </li>
-      <li v-if="character.description != ''">
-        {{ character.description }}
-      </li>
-    </ul>
+    <v-container class="p-0">
+      <v-layout justify-center row>
+        <v-flex xs12 sm6>
+          <v-text-field
+            v-model="searchText"
+            label="Search Character"
+            @keyup.enter.native="fetchCharacters"
+          >
+            <template slot="append">
+              <v-icon v-if="hasText" @click="clearButton">clear</v-icon>
+            </template>
+            <template slot="append-outer">
+              <v-icon @click="fetchCharacters">search</v-icon>
+            </template>
+          </v-text-field>
+          <p>{{ answer }}</p>
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <v-container fluid grid-list-md>
+      <v-layout justify-center row wrap>
+        <v-flex
+          v-for="character in characters"
+          :key="character.id"
+          xs12
+          sm6
+          md4
+        >
+          <v-card>
+            <v-img
+              :src="
+                character.thumbnail.path + '.' + character.thumbnail.extension
+              "
+              height="200px"
+            ></v-img>
+
+            <v-card-title primary-title>
+              <div class="title text-truncate">{{ character.name }}</div>
+            </v-card-title>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn darck class="white--text" color="purple">Explore</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
   </div>
 </template>
 

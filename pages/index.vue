@@ -1,8 +1,8 @@
 <template>
-  <v-container>
+  <div>
     <Header />
     <SearchField />
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -19,6 +19,6 @@ export default {
 
 <style lang="stylus" scoped>
 .container {
-  // padding: 0px;
+  padding: 0;
 }
 </style>
