@@ -2,7 +2,7 @@
   <div>
     <v-text-field
       v-model="searchInput"
-      label="Pesquisar Personagem"
+      label="Search Character"
       @keyup.enter.native="getCharacters"
     >
       <template slot="append">
@@ -37,7 +37,7 @@ export default {
     return {
       searchInput: '',
       characters: [],
-      marvelError: 'Pesquise uma personagem da marvel.'
+      marvelError: 'Search for a Marvel character.'
     }
   },
   computed: {
@@ -48,9 +48,9 @@ export default {
   watch: {
     searchInput() {
       if (this.searchInput != '') {
-        this.marvelError = 'Esperando você terminar de digitar...'
+        this.marvelError = 'Waiting for you to finish typing ...'
       } else {
-        this.marvelError = 'Pesquise uma personagem da marvel.'
+        this.marvelError = 'Search for a Marvel character.'
       }
       this.debouncedGetCharacters()
     }
@@ -78,12 +78,12 @@ export default {
         .then(result => {
           if (result.data.results.length == 0) {
             this.characters = []
-            this.marvelError = 'Nenhuma personagem encontrada com essas letras.'
+            this.marvelError = 'No character found with these letters.'
           } else {
             this.characters = result.data.results
             result.data.results.length == 1
-              ? (this.marvelError = 'Personagem encontrada.')
-              : (this.marvelError = 'Personagens encontradas.')
+              ? (this.marvelError = 'Character found.')
+              : (this.marvelError = 'Characters found.')
           }
         })
         .catch(error => {

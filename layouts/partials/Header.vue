@@ -47,7 +47,7 @@ export default {
   data() {
     return {
       description:
-        'Pesquise sobre as mais diversas personagens do Universo Marvel: mulheres, homens, organizações, espécies alienigenas, divindades, animais, entidades não-corporais, manifestações trans-dimensionais, personificações abstratas e bolhas amorfas verdes que ocupam o Universo Marvel (e vários universos alternativos, linhas do tempo e realidades alteradas). Por exemplo, o Homem-Aranha.'
+        'Search the most diverse characters on Marvel Universe: women, men, organizations, alien species, deities, animals, non-corporeal entities, trans-dimensional manifestations, abstract personifications, and green amorphous blobs which occupy the Marvel Universe (and various alternate universes, timelines and altered realities therein). For example, Spider-Man.'
     }
   }
 }
