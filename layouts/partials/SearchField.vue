@@ -1,12 +1,12 @@
 <template>
   <div>
-    <v-container class="p-0">
+    <v-container class="pb-0">
       <v-layout justify-center row>
         <v-flex xs12 sm6>
           <v-text-field
             v-model="searchText"
             label="Search Character"
-            @keyup.enter.native="fetchCharacters"
+            @keyup.enter="fetchCharacters"
           >
             <template slot="append">
               <v-icon v-if="hasText" @click="clearButton">clear</v-icon>
@@ -20,7 +20,7 @@
       </v-layout>
     </v-container>
     <v-container fluid grid-list-md>
-      <v-layout justify-center row wrap>
+      <v-layout row wrap>
         <v-flex
           v-for="character in characters"
           :key="character.id"
@@ -34,10 +34,47 @@
                 character.thumbnail.path + '.' + character.thumbnail.extension
               "
               height="200px"
-            ></v-img>
+            >
+              <v-layout pa-1 column fill-height class="lightbox white--text">
+                <v-spacer></v-spacer>
+                <v-flex shrink class="pb-0">
+                  <div class="pb-0 body-1 text-xs-right">
+                    ©2019 MARVEL
+                  </div>
+                </v-flex>
+              </v-layout>
+            </v-img>
 
             <v-card-title primary-title>
               <div class="title text-truncate">{{ character.name }}</div>
+            </v-card-title>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn darck class="white--text" color="purple">Explore</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
+      </v-layout>
+      <v-layout v-if="hasCharacters == 0 || hasText == 0" row wrap>
+        <v-flex xs12 sm6 md4>
+          <v-card>
+            <v-img
+              src="https://hottopic.scene7.com/is/image/HotTopic/10525417_hi?$pdp_hero_zoom$"
+              height="200px"
+            >
+              <v-layout pa-1 column fill-height class="lightbox white--text">
+                <v-spacer></v-spacer>
+                <v-flex shrink class="pb-0">
+                  <div class="pb-0 body-1 text-xs-right">
+                    ©2019 MARVEL
+                  </div>
+                </v-flex>
+              </v-layout>
+            </v-img>
+
+            <v-card-title primary-title>
+              <div class="title text-truncate">?!</div>
             </v-card-title>
 
             <v-card-actions>
@@ -67,6 +104,9 @@ export default {
   computed: {
     hasText() {
       return this.searchText.length
+    },
+    hasCharacters() {
+      return this.characters.length
     }
   },
   watch: {

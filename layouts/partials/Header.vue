@@ -8,11 +8,14 @@
             height="200px"
             src="https://wallpaperaccess.com/full/193203.jpg"
           >
-            <v-container fill-height fluid>
-              <v-layout fill-height>
-                <v-flex xs12 align-end flexbox> </v-flex>
-              </v-layout>
-            </v-container>
+            <v-layout pa-2 column fill-height class="lightbox white--text">
+              <v-spacer></v-spacer>
+              <v-flex shrink class="pb-0">
+                <div class="pb-0 body-1 text-xs-right">
+                  ©2019 MARVEL
+                </div>
+              </v-flex>
+            </v-layout>
           </v-img>
           <v-card-actions>
             <a
