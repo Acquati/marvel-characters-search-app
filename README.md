@@ -1,4 +1,4 @@
-# Marvel Characters Search APP
+# Marvel Characters Search App
 
 Search the most diverse characters on Marvel Universe.
 
