@@ -1,6 +1,6 @@
 <template>
-  <v-container>
-    <v-layout class="header" row wrap justify-center>
+  <v-container class="header">
+    <v-layout row wrap justify-center>
       <v-flex xs12>
         <v-card>
           <v-img
@@ -67,6 +67,10 @@ export default {
 
 <style lang="stylus" scoped>
 .header {
+  @media screen and (min-width: 960px) {
+    margin-top: 2rem;
+  }
+
   a {
     text-decoration: none;
   }

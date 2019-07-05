@@ -64,8 +64,4 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.v-image {
-  // height: 300px;
-}
-</style>
+<style lang="stylus" scoped></style>
