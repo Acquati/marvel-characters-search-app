@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container class="pb-0">
+    <v-container class="pb-0 pt-4">
       <v-layout justify-center row>
         <v-flex xs12 sm6>
           <v-text-field
@@ -140,4 +140,10 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+.container {
+  @media screen and (min-width: 960px) {
+    padding: 0;
+  }
+}
+</style>

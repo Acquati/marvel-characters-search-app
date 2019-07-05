@@ -17,7 +17,7 @@
               </v-flex>
             </v-layout>
           </v-img>
-          <v-card-title class="headline">
+          <v-card-title class="headline pb-0">
             {{ title }}
           </v-card-title>
 
