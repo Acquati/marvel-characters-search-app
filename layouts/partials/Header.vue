@@ -23,7 +23,7 @@
               target="_blank"
             >
               <v-btn color="blue-grey" class="white--text">
-                github
+                source code
                 <v-icon right dark>code</v-icon>
               </v-btn>
             </a>

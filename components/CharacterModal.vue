@@ -36,6 +36,15 @@
           No description for this character was found on Marvel API.
         </v-card-text>
 
+        <div v-for="(item, index) in character.urls" :key="index">
+          <v-card-title class="headline text-capitalize">
+            {{ item.type }}
+          </v-card-title>
+          <v-card-text class="text-truncate">
+            <a :href="item.url" target="_blank">{{ item.url }}</a>
+          </v-card-text>
+        </div>
+
         <v-divider></v-divider>
 
         <v-card-actions>

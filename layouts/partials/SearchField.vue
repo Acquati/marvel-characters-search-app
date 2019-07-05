@@ -19,6 +19,7 @@
         </v-flex>
       </v-layout>
     </v-container>
+
     <v-container grid-list-md>
       <v-layout row wrap>
         <v-flex
@@ -124,6 +125,7 @@ export default {
             this.answer = 'No character found with these letters.'
           } else {
             this.characters = result.data.results
+            console.log(this.characters)
             result.data.results.length == 1
               ? (this.answer = 'Character found.')
               : (this.answer = 'Characters found.')
