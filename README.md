@@ -1,4 +1,4 @@
-# Marvel Characters Search
+# Marvel Characters Search APP
 
 Search the most diverse characters on Marvel Universe.
 
@@ -9,8 +9,15 @@ Search the most diverse characters on Marvel Universe.
 - [Vue](https://vuejs.org/)
 - [Vuetify](https://vuetifyjs.com/en/)
 - [Nuxt](https://nuxtjs.org/)
+- [Material Design](https://material.io/)
 - [Google Cloud](https://cloud.google.com/)
 - [Marvel Developer](https://developer.marvel.com/)
+
+### Features
+
+- Device Width Breakpoints: 360px, 600px, 960px, 1264px, 1904px +
+- [Server Side Rendering](https://ssr.vuejs.org/#what-is-server-side-rendering-ssr)
+- ESLint and Prettier.
 
 ## Build Setup
 
