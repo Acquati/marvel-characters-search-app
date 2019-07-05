@@ -17,7 +17,8 @@ Search the most diverse characters on Marvel Universe.
 
 - Device Width Breakpoints: 360px, 600px, 960px, 1264px, 1904px +
 - [Server Side Rendering](https://ssr.vuejs.org/#what-is-server-side-rendering-ssr)
-- ESLint and Prettier.
+- ESLint and Prettier
+- Progressive Web App
 
 ## Build Setup
 
