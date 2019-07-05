@@ -13,7 +13,6 @@
       <v-card>
         <v-img
           :src="character.thumbnail.path + '.' + character.thumbnail.extension"
-          height="300px"
         >
           <v-layout pa-1 column fill-height class="lightbox white--text">
             <v-spacer></v-spacer>
@@ -74,4 +73,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+.v-image {
+  // height: 300px;
+}
+</style>

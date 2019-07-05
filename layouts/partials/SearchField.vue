@@ -28,6 +28,7 @@
           xs12
           sm6
           md4
+          xl3
         >
           <v-card>
             <v-img
@@ -56,8 +57,9 @@
             </v-card-actions>
           </v-card>
         </v-flex>
+
+        <CharacterPlaceholder v-if="hasCharacters == 0" />
       </v-layout>
-      <CharacterPlaceholder v-if="hasCharacters == 0" />
     </v-container>
   </div>
 </template>
@@ -125,7 +127,6 @@ export default {
             this.answer = 'No character found with these letters.'
           } else {
             this.characters = result.data.results
-            console.log(this.characters)
             result.data.results.length == 1
               ? (this.answer = 'Character found.')
               : (this.answer = 'Characters found.')
