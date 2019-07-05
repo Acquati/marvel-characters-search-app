@@ -20,7 +20,7 @@
       </v-layout>
     </v-container>
 
-    <v-container grid-list-md>
+    <v-container grid-list-md pb-4>
       <v-layout row wrap>
         <v-flex
           v-for="character in characters"
