@@ -10,6 +10,7 @@ Search the most diverse characters on Marvel Universe.
 - [Vuetify](https://vuetifyjs.com/en/)
 - [Nuxt](https://nuxtjs.org/)
 - [Material Design](https://material.io/)
+- [Node](https://nodejs.org/en/)
 - [Google Cloud](https://cloud.google.com/)
 - [Marvel Developer](https://developer.marvel.com/)
 
