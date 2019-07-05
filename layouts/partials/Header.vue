@@ -6,7 +6,7 @@
           <v-img
             class="white--text"
             height="200px"
-            src="https://wallpaperaccess.com/full/193203.jpg"
+            src="https://res.cloudinary.com/acquati/image/upload/v1562304961/marvel/193203_dvp3jn.jpg"
           >
             <v-layout pa-2 column fill-height class="lightbox white--text">
               <v-spacer></v-spacer>
@@ -17,30 +17,36 @@
               </v-flex>
             </v-layout>
           </v-img>
-          <v-card-actions>
-            <a
-              href="https://github.com/Acquati/recrutamento-fullstack"
-              target="_blank"
-            >
-              <v-btn color="blue-grey" class="white--text">
-                source code
-                <v-icon right dark>code</v-icon>
-              </v-btn>
-            </a>
-          </v-card-actions>
-          <v-card-actions>
-            <a href="https://developer.marvel.com/" target="_blank">
-              <v-btn color="red" class="white--text"
-                >marvel developer
-                <v-icon right dark>gavel</v-icon>
-              </v-btn>
-            </a>
-          </v-card-actions>
-          <v-card-title>
-            <div>
-              {{ description }}
-            </div>
+          <v-card-title class="headline">
+            {{ title }}
           </v-card-title>
+
+          <v-card-text>
+            {{ description }}
+          </v-card-text>
+
+          <v-layout row wrap>
+            <v-card-actions>
+              <a
+                href="https://github.com/Acquati/recrutamento-fullstack"
+                target="_blank"
+                class="mr-1"
+              >
+                <v-btn color="blue-grey" class="white--text">
+                  source code
+                  <v-icon right dark>code</v-icon>
+                </v-btn>
+              </a>
+            </v-card-actions>
+            <v-card-actions>
+              <a href="https://developer.marvel.com/" target="_blank">
+                <v-btn color="red" class="white--text">
+                  marvel developer
+                  <v-icon right dark>gavel</v-icon>
+                </v-btn>
+              </a>
+            </v-card-actions>
+          </v-layout>
         </v-card>
       </v-flex>
     </v-layout>
@@ -51,8 +57,9 @@
 export default {
   data() {
     return {
+      title: 'Search the most diverse characters on Marvel Universe',
       description:
-        'Search the most diverse characters on Marvel Universe: women, men, organizations, alien species, deities, animals, non-corporeal entities, trans-dimensional manifestations, abstract personifications, and green amorphous blobs which occupy the Marvel Universe (and various alternate universes, timelines and altered realities therein). For example, Spider-Man.'
+        'Women, men, organizations, alien species, deities, animals, non-corporeal entities, trans-dimensional manifestations, abstract personifications, and green amorphous blobs which occupy the Marvel Universe (and various alternate universes, timelines and altered realities therein). For example, Spider-Man.'
     }
   }
 }
